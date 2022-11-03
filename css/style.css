@@ -455,6 +455,7 @@ header .toggle {
   padding: var(--section-padding) 0;
 }
 
+<<<<<<< HEAD
 .shuffle {
   display: flex;
   justify-content: center;
@@ -535,3 +536,6 @@ header .toggle {
   width: fit-content;
 }
 /* End portfolio */
+=======
+/* End portfolio */
+>>>>>>> 907baa65eb3ee9f5dc1e1aff8e001f25b4a9357a
