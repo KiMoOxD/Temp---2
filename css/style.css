@@ -536,11 +536,11 @@ header .toggle {
   width: fit-content;
 }
 /* End portfolio */
-<<<<<<< HEAD
 /* Start Video */
 
 .video {
   position: relative;
+  height: fit-content;
 }
 
 .video::before {
@@ -560,11 +560,11 @@ header .toggle {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 100%;
   background: var(--transparent-color);
   text-align: center;
   padding: 60px 0;
   color: white;
+  width: 100%;
 }
 
 .video .content h3 {
@@ -591,23 +591,27 @@ header .toggle {
 
 .about {
   padding: var(--section-padding) 0 0 0;
+  overflow: hidden;
+  text-align: center;
 }
 
 .about .container{
-  overflow: hidden;
   position: relative;
 }
-.about .img {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 290px;
 
-}
 
 .about img {
-  position: absolute;
+  position: relative;
   bottom: -120px;
+  margin-top: -120px;
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  .about img {
+    bottom: -60px;
+    margin-top: -60px;
+  }
 }
 /* End ABOUT US */
 /* Start Stats */
@@ -629,12 +633,14 @@ header .toggle {
     top: 0;
     position: absolute;
   }
-
+@media (min-width:991px) {
+  .stats .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+    
+  }
+}
 .stats .container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-basis: 25%;
-  justify-content: center;
   position: relative;
 }
 
@@ -671,7 +677,253 @@ header .toggle {
 }
 
 /* End Stats */
-=======
-=======
-/* End portfolio */
->>>>>>> 11d4c8b0cc4004a863193a98341f25d3435f7f72
+
+/* Start Skills */
+
+.skills {
+  padding: var(--section-padding);
+  color: #222;
+}
+
+.skills .container {
+  /* display: flex;
+  justify-content: space-between;
+  flex-basis: 45%;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+
+.skills .left .content div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    /* flex-direction: column; */
+}
+
+@media (max-width: 1200px) {
+  .skills .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .skills .container .left,
+  .skills .container .right {
+    align-self: center;
+    margin-bottom: 30px;
+    max-width: 100%;
+  }
+
+  .skills .head h2 {
+    max-width: 100%;
+  }
+  .skills .head  {
+    max-width: 100%;
+  }
+  .skills .left .content div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+}
+
+.skills .left .content img {
+  width: 100px;
+  border-radius: 50%;
+  margin-right: 0;
+  margin-bottom: 25px;
+}
+
+.skills .head {
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.skills .head h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: black;
+}
+
+.skills .head p {
+  font-size: 16px;
+  max-width: 100%;
+  width:470px;
+  color: #777;
+  text-align: center;
+  line-height: 2;
+}
+
+
+.skills .left .content img {
+  width: 100px;
+  border-radius: 50%;
+  margin-right: 50px;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 1200px) {
+.skills .left .content img {
+  width: 100px;
+  border-radius: 50%;
+  margin-right: 0;
+  margin-bottom: 25px;
+}
+}
+
+
+
+.skills .left .content div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.skills .left .content div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+
+.skills .left .content div p {
+  align-self: flex-start;
+  width: 350px;
+  font-size: 16px;
+  max-width: 100%;
+  line-height: 1.8;
+  color: black;
+}
+
+.skills .left .text {
+  display: flex;
+  flex-direction: column;
+  border-bottom: rgba(119, 119, 119, 0.39) solid 1px;
+
+}
+
+.skills .left .text p:last-child {
+  color: #777;
+  text-align: end;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.skills .bullets {
+  width: 60px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills .bullets span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: rgba(119, 119, 119, 0.493) solid 1px;
+}
+
+.skills .bullets .active {
+  background: var(--main-color);
+  border: none;
+}
+
+.skills .box {
+  position: relative;
+}
+
+.skills .right .box p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.skills .right .box div {
+  height: 30px;
+  background: rgba(119, 119, 119, 0.185);
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.skills .right .box div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  top: 0;
+  background: var(--main-color);
+}
+
+.skills .right .box div[prog="90"]::before {width: 90%;}
+.skills .right .box div[prog="85"]::before {width: 85%;}
+.skills .right .box div[prog="80"]::before {width: 80%;}
+.skills .right .box div[prog="90"]::before {width: 90%;}
+
+.skills .right .box div[prog="90"]::after {
+  content: "90%";
+  background: black;
+  color: white;
+  position: absolute;
+  left: calc(90% - 20px);
+  top: -40px;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.skills .right .box div[prog="85"]::after {
+  content: "85%";
+  background: black;
+  color: white;
+  position: absolute;
+  left: calc(85% - 20px);
+  top: -40px;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.skills .right .box div[prog="80"]::after {
+  content: "80%";
+  background: black;
+  color: white;
+  position: absolute;
+  left: calc(80% - 20px);
+  top: -40px;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.skills .box p::after {
+  content: "";
+  position: absolute;
+  border: 10px solid;
+  border-color: black transparent transparent transparent;
+  top: 20px;
+  left: calc(90% - 10px);
+}
+
+.skills .box p[prog="85"]::after {
+  left: calc(85% - 10px);
+}
+
+.skills .box p[prog="80"]::after {
+  left: calc(80% - 10px);
+}
+
+/* End Skills */
