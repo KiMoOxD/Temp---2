@@ -681,17 +681,17 @@ header .toggle {
 /* Start Skills */
 
 .skills {
-  padding: var(--section-padding);
+  padding: var(--section-padding) 0;
   color: #222;
 }
 
 .skills .container {
-  /* display: flex;
+  display: flex;
   justify-content: space-between;
   flex-basis: 45%;
-  flex-wrap: wrap; */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  flex-wrap: wrap;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
 }
 
 
@@ -703,11 +703,12 @@ header .toggle {
 }
 
 @media (max-width: 1200px) {
-  .skills .container {
-    display: flex;
+   .skills .container {
+    /* display: flex; */
     justify-content: center;
-    flex-direction: column;
-  }
+    /* flex-direction: column;  */
+    
+  } 
 
   .skills .container .left,
   .skills .container .right {
@@ -929,3 +930,151 @@ header .toggle {
 /* End Skills */
 /* End portfolio */
 
+/* Start Quote */
+
+.wisdom {
+  /* padding: var(--section-padding) 0; */
+  overflow: hidden;
+  position: relative;
+  background: url(../images/quote.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wisdom .container{
+  position: relative;
+  padding: var(--section-padding) 15px;
+}
+
+
+.wisdom::before {
+  content: "";
+  position: absolute; 
+   top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.wisdom p, .wisdom q {
+  position: relative;
+  z-index: 5;
+}
+
+.wisdom q {
+  font-size: 30px;
+  display: block;
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wisdom p {
+  text-align: center;
+}
+/* End Quote */
+
+/* start pricing */
+
+.pricing {
+  padding: var(--section-padding) 0;
+}
+
+.pricing .container .plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.pricing .plan {
+  border-top: 1px solid var(--main-color);
+  text-align: center;
+  color: black;
+}
+
+.pricing .plan .head {
+  padding: 40px 20px;
+  border-bottom: 1px solid var(--main-color);
+}
+
+.pricing .plan h3 {
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.pricing .plan span {
+  font-size: 60px;
+  position: relative;
+  color: black;
+  font-weight: bold;
+}
+
+.pricing .plan span::before {
+  content: "$";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  font-size: 25px;
+  font-weight: normal;
+}
+
+.pricing .plan span::after {
+  content: "/Mo";
+  position: absolute;
+  bottom: 0;
+  right: -55px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.pricing .plan ul li {
+  padding: 20px 0;
+  display: block;
+  position: relative;
+}
+
+
+.pricing .plan ul li:not(li:last-child):after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  background: var(--main-color);
+  height: 1px;
+}
+
+.plan .foot {
+  border-top: 1px solid var(--main-color);
+  padding: 50px 0 ;
+}
+.plan .foot a {
+  text-decoration: none;
+  color: rgb(68, 1, 95);
+  padding: 20px;
+  border: 1px solid var(--main-color);
+  cursor: pointer;
+}
+
+.pricing .end {
+  color: black;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.pricing .end a {
+  text-decoration: none;
+  color: white;
+  background: var(--main-color);
+  padding: 15px 30px;
+  cursor: pointer;
+}
+
+.pricing .end p {
+  margin-bottom: 35px;
+  font-size: 20px;
+}
+
+/* End pricing */
